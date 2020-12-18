@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+</head>
+<body>
+	<h2>The XMLHttpRequest Object</h2>
+	<button type = "button" onclick = "loadData()"> Load Data </button>
+	<p id="demo">Data here......</p>
+	<script type="text/javascript">
+		function loadData(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+				document.getElementById("demo").innerHTML = this.responseText;
+			else
+				console.log(this.readyState);
+			}
+			//xhttp.open("GET", "info.txt", true);
+			xhttp.open("POST", "info.txt", true);
+			xhttp.send();
+		}
+	</script>
+</body>
+</html>

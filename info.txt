@@ -1,0 +1,25 @@
+D:\codes\javaScript\w3_self_2020\AJAX
+AJAX is not a programming language.
+
+AJAX is a technique for accessing web servers from a web page.
+
+AJAX stands for Asynchronous JavaScript And XML.
+ahire
+hitesh
+<script type="text/javascript">
+		function showUser(str) {
+			if (str=="") {
+				document.getElementById("txtHint").innerHTML="null";
+				return;
+			}
+			var xmlhttp=new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function() {
+				if (this.readyState==4 && this.status==200) 
+					document.getElementById("txtHint").innerHTML=this.responseText;
+			}
+			console.log(str);
+			xmlhttp.open("GET","getPerson.php?q="+str,true);
+			xmlhttp.send();
+		}
+	</script>
+	harry source code : https://codewithharry.com/videos/javascript-tutorials-in-hindi-35
